@@ -1,0 +1,47 @@
+/* GLOBAL STYLES */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Georgia',serif;}
+body{background:black;color:white;overflow-x:hidden;}
+
+/* MUSIC BUTTON */
+#musicBar{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:rgba(0,0,0,0.7);border:1px solid white;padding:10px 18px;
+  border-radius:30px;cursor:pointer;z-index:1000;font-weight:bold;transition:0.3s;
+}
+#musicBar:hover{background:rgba(255,255,255,0.1);}
+
+/* SCENES */
+.scene{
+  height:100vh;position:relative;background-size:cover;background-position:center;
+  background-attachment:fixed;display:flex;justify-content:center;align-items:center;text-align:center;
+  opacity:0;transform:translateY(40px) scale(0.95);transition:all 1.2s ease;
+}
+.scene.show{opacity:1;transform:translateY(0) scale(1);}
+
+/* OVERLAY */
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:1;}
+
+/* CONTENT */
+.content{position:relative;z-index:2;padding:20px;max-width:650px;}
+h1{font-size:3rem;}
+h2{font-size:2.2rem;margin-bottom:20px;}
+p{font-size:1.2rem;line-height:1.8;opacity:0.9;}
+.glow{text-shadow:0 0 18px rgba(255,200,220,0.6);}
+
+/* BACKGROUNDS */
+.hero{background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500");}
+.cafe{background-image:url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1500");}
+.africa{background-image:url("https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=1500");}
+.love{background-image:url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1500");}
+.meet{background-image:url("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1500");}
+.airport{background-image:url("https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1500");}
+.future{background-image:url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1500");}
+
+/* PARTICLES AND HEARTS */
+.particles span{
+  position:fixed;bottom:-20px;font-size:16px;animation:rise 10s linear infinite;opacity:0.6;
+}
+@keyframes rise{from{transform:translateY(0);}to{transform:translateY(-110vh);opacity:0;}}
+
+/* MOBILE */
+@media(max-width:600px){h1{font-size:2.2rem;}h2{font-size:1.6rem;}p{font-size:1rem;}#musicBar{padding:8px 14px;font-size:0.9rem;}}
