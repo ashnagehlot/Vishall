@@ -28,7 +28,9 @@ var observer = new IntersectionObserver(function(entries) {
   });
 },{threshold:0.2});
 
-scenes.forEach(function(scene){observer.observe(scene);});
+scenes.forEach(function(scene){
+  observer.observe(scene);
+});
 
 // FLOATING PARTICLES AND HEARTS
 var particleContainer = document.querySelector(".particles");
@@ -41,6 +43,7 @@ function createParticle() {
   particle.style.fontSize = (Math.random()*12 + 12) + "px";
   particle.style.animationDuration = (Math.random()*5 + 6) + "s";
   particleContainer.appendChild(particle);
+
   setTimeout(function(){ particle.remove(); },12000);
 }
 
